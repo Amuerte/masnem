@@ -38,7 +38,7 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     '<%= config.dist %>/js/jquery.min.js': [
-                    '<%= bdir %>/jquery/src/jquery.js'
+                    '<%= config.bdir %>/jquery/src/jquery.js'
                     ]
                 }
             }

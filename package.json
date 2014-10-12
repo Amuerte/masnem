@@ -1,0 +1,24 @@
+{
+  "name": "masnem",
+  "version": "0.0.1",
+  "description": "Recipe for cooking delicious nems.",
+  "main": "www/sam/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Amuerte/masnem.git"
+  },
+  "author": "Ben Amuerte",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amuerte/masnem/issues"
+  },
+  "homepage": "https://github.com/Amuerte/masnem",
+   "devDependencies": {
+       "grunt": "~0.4.5",
+       "grunt-contrib-uglify": "~0.6.0",
+       "grunt-contrib-copy": "~0.6.0"
+   }
+}

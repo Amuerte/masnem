@@ -4,6 +4,7 @@ var config = {
     pkg: pkgjson,
     html: 'www/sam',
     js: 'src/main/js',
+    resources: 'src/main/resources',
     dist: 'dist',
     lib: 'bower_components'
 }
@@ -41,6 +42,13 @@ module.exports = function (grunt) {
                         src: '<%= config.lib %>/jquery/dist/jquery.min.js',
                         flatten: true,
                         dest: '<%= config.dist %>/js/lib'
+                    },
+                    {
+                        expand: true,
+                        cwd: '<%= config.resources %>/images',
+                        src: '**/*',
+                        flatten: false,
+                        dest: '<%= config.dist %>/images'
                     }
                     /*
                     ,

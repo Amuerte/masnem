@@ -25,6 +25,7 @@ module.exports = function (grunt) {
                         flatten: true,
                         dest: '<%= config.dist %>'
                     },
+                    //bootstrap
                     {
                         expand: true,
                         src: '<%= config.lib %>/bootstrap/dist/css/*min.css',
@@ -39,9 +40,23 @@ module.exports = function (grunt) {
                     },
                     {
                         expand: true,
+                        cwd: '<%= config.lib %>/bootstrap/fonts',
+                        src: '*',
+                        dest: '<%= config.dist %>/fonts'
+                    },
+                    //jQuery
+                    {
+                        expand: true,
                         src: '<%= config.lib %>/jquery/dist/jquery.min.js',
                         flatten: true,
                         dest: '<%= config.dist %>/js/lib'
+                    },
+                    //holderjs
+                    {
+                        expand: true,
+                        src: '<%= config.lib %>/holderjs/holder.js',
+                        flatten: true,
+                        dest: '<%= config.dist %>'
                     },
                     {
                         expand: true,
@@ -50,15 +65,7 @@ module.exports = function (grunt) {
                         flatten: false,
                         dest: '<%= config.dist %>/images'
                     }
-                    /*
-                    ,
-                    {
-                        expand: true,
-                        cwd: '<%= config.app %>/_lib/font-awesome',
-                        src: 'fonts/*',
-                        dest: '<%= config.dist %>'
-                    }
-                    */]
+                    ]
             }
         },
         uglify: {

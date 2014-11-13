@@ -44,7 +44,7 @@ module.exports = function (grunt) {
                         src: '*',
                         dest: '<%= config.dist %>/fonts'
                     },
-                    //jQuery
+                    //jQuery 
                     {
                         expand: true,
                         src: '<%= config.lib %>/jquery/dist/jquery.min.js',
@@ -58,12 +58,27 @@ module.exports = function (grunt) {
                         flatten: true,
                         dest: '<%= config.dist %>'
                     },
+                    //mustache.js
+                    {
+                        expand: true,
+                        src: '<%= config.lib %>/mustache.js/mustache.js',
+                        flatten: true,
+                        dest: '<%= config.dist %>/js/lib'
+                    },
+                    //resources
                     {
                         expand: true,
                         cwd: '<%= config.resources %>/images',
                         src: '**/*',
                         flatten: false,
                         dest: '<%= config.dist %>/images'
+                    },
+                    {
+                        expand: true,
+                        cwd: '<%= config.resources %>/json',
+                        src: '**/*',
+                        flatten: false,
+                        dest: '<%= config.dist %>/json'
                     }
                     ]
             }

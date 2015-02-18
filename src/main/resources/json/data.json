@@ -1,0 +1,20 @@
+{
+  "peintures" : {
+      "pictures": [
+        "red.png",
+        "yellow.png",
+        "blue.png"
+       ],
+      "baseDir": "images/peinture",
+      "id" : "peinture"
+    },
+    "sculptures" : {
+      "pictures": [
+        "blue.png",
+        "red.png",
+        "yellow.png"
+       ],
+      "baseDir": "images/peinture",
+      "id" : "sculpture"
+    }
+}

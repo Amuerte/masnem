@@ -13,43 +13,13 @@
     <script src="js/lib/mustache.js"></script>
     <script src="js/lib/bootstrap.min.js"></script>
     <script src="holder.js"></script>
-    <script src="js/sam.min.js"></script>
+    <script src="js/sam.js"></script>
 
     <link rel="stylesheet" type="text/css" href="core.css">
 
     <script>
-      var peintureData, sculptureData;
-      $(document).ready(function(){
-          $.getJSON('json/peintures.json', function(data) {
-            peintureData = data;
-          });
+      
 
-          $.getJSON('json/peintures.json', function(data) {
-            sculptureData = {};
-          });
-
-          var thumbnailTemplate = $('#tpl_thumbnail').html();
-          Mustache.parse(thumbnailTemplate);
-
-          $('#navLinkPeinture').click(function() {
-            var rendered = Mustache.render(thumbnailTemplate, peintureData);
-            $('#apercus').html(rendered);
-          });
-
-          $('#navLinkNews').click(function() {
-            $('#apercus').html('');
-          });
-
-          $('#navLinkContact').click(function() {
-            $('#apercus').html('');
-          });
-
-          $('#navLinkSculpture').click(function() {
-            var rendered = Mustache.render(thumbnailTemplate, sculptureData);
-            $('#apercus').html(rendered);
-          });
-
-      });
     </script>
 
     <script id="tpl_thumbnail" type="x-tmpl-mustache">
@@ -60,6 +30,32 @@
              </a>
         </div>
       {{/pictures}}
+    </script>
+
+    <script id="tpl_caroussel" type="x-tmpl-mustache">
+      <div class="col-lg2"></div>
+      
+      <div id="carousselColumn" class="col-lg8">  
+              
+        <div id="carousel-{{id}}" class="carousel slide" data-interval="false">
+          <div class="carousel-inner" role="listbox">
+          {{#pictures}}
+            <div class="item">
+              <img data-holder-rendered="false" data-src="holder.js/1000x750" src="{{baseDir}}/{{.}}">
+            </div>
+          {{/pictures}}
+          </div>
+          <a class="left carousel-control" href="#carousel-{{id}}" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel-{{id}}" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="col-lg2"></div>
     </script>
 
 </head>
@@ -73,43 +69,7 @@
           <!-- Tab panes -->
           <div class="tab-content">
             <div class="tab-pane active" id="news">...SOON...</div>
-            <div class="tab-pane" id="peintures">
-              <div class="col-lg2"></div>
-              <div class="col-lg8">
-              
-                  <div id="carousel-peintures" class="carousel slide" data-interval="false" data-ride="carousel">
-                    <!--
-                      <ol class="carousel-indicators">
-                        <li data-target="#carousel-peintures" data-slide-to="0" class=""></li>
-                        <li class="active" data-target="#carousel-peintures" data-slide-to="1"></li>
-                        <li class="" data-target="#carousel-peintures" data-slide-to="2"></li>
-                      </ol>
-                    -->
-                      <div class="carousel-inner" role="listbox">
-                        <div class="item active left">
-                          <img data-holder-rendered="false" data-src="holder.js/1000x750" src="images/peinture/red.png">
-                        </div>
-                        <div class="item next left">
-                          <img data-holder-rendered="false" data-src="holder.js/1000x750" src="images/peinture/yellow.png">
-                        </div>
-                        <div class="item">
-                          <img data-holder-rendered="false" data-src="holder.js/1000x750" src="images/peinture/blue.png">
-                        </div>
-                      </div>
-                      
-                      <a class="left carousel-control" href="#carousel-peintures" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                      </a>
-                      <a class="right carousel-control" href="#carousel-peintures" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                      </a>
-                  </div>
-
-                </div>  
-
-              <div class="col-lg2"></div>
-
-            </div>
+            <div class="tab-pane" id="peintures">...PEINTURES....</div>
             <div class="tab-pane" id="sculptures">...PAYSAGES...</div>
             <div class="tab-pane" id="contact">...CONTACT...</div>
           </div>

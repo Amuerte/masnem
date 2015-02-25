@@ -48,9 +48,22 @@ $(document).ready(function(){
 function initGallery(galleryDiv, data, thumbnailTemplate, carousselTemplate) {
     var rendered = Mustache.render(thumbnailTemplate, data);
     $('#apercus').html(rendered);
+    $('.thumbnail').each(showSelectedThumbnail(galleryDiv));
 
     var renderCaroussel = Mustache.render(carousselTemplate, data);
     galleryDiv.html(renderCaroussel);
     galleryDiv.find('.carousel').find('.item').first().addClass('active');
     galleryDiv.find('.carousel').carousel();
+}
+
+function showSelectedThumbnail(galleryDiv) {
+  var imagePath = $(this).find('img').attr('src');
+  var imageName = imagePath.match('(.*)_(.*png)')[2];
+
+  galleryDiv.find('.item img');
+
+  $(this).click(function(event) {
+    alert(imageName);
+  });
+
 }

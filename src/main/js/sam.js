@@ -57,13 +57,19 @@ function initGallery(galleryDiv, data, thumbnailTemplate, carousselTemplate) {
 }
 
 function showSelectedThumbnail(galleryDiv) {
-  var imagePath = $(this).find('img').attr('src');
-  var imageName = imagePath.match('(.*)_(.*png)')[2];
+  return function() {
+    var imagePath = $(this).find('img').attr('src');
+    var imageName = imagePath.match('(.*)_(.*png)')[2];
 
-  galleryDiv.find('.item img');
+    galleryDiv.find('.item img');
 
-  $(this).click(function(event) {
-    alert(imageName);
-  });
-
+    $(this).click(function(event) {
+      //alert(imageName);
+      var newDivToShow = galleryDiv.find("img[src$='" + imageName + "']").parent();
+      newDivToShow.siblings().each(function() {
+        $(this).removeClass('active');
+      });
+      newDivToShow.addClass('active');
+   });
+  }
 }

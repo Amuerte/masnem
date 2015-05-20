@@ -1,4 +1,13 @@
 import os
 
-for file in os.listdir("resources/images"):
-    print(file)
+imgDir = "resources/images/"
+
+"""
+for dirname in os.listdir(imgDir):
+    for filename in os.listdir(imgDir + dirname):
+        print filename
+"""
+
+for (dirpath, dirnames, filenames) in os.walk(imgDir):
+    for filename in filenames:
+        print dirpath + '/' + filename

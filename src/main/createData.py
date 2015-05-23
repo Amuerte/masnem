@@ -1,4 +1,5 @@
 import os
+import json
 
 rootDir = "resources/images/"
 
@@ -17,4 +18,4 @@ for (dirpath, dirnames, filenames) in os.walk(rootDir):
             dataPics[path]['pictures'] = filenames
             dataPics[path]['baseDir'] = dirpath
 
-print dataPics
+print json.dumps(dataPics)
